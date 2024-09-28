@@ -1,39 +1,42 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-//task1:
-void main(){
-  runApp(text());
+
+
+void main() {
+  runApp(MyRichTextApp());
 }
-class text extends StatelessWidget{
+
+class MyRichTextApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade900,
-          title: Text("Fecbook" ,
-          style: TextStyle(
-            color: Colors.white ,
-            fontWeight:FontWeight.w900 ,
-          ),
-          ),
+          title: Text("Rich Text Widget"),
         ),
         body: Center(
-          child: Text("Welcom on fecbook" ,
-            style: TextStyle(
-              fontSize: 29.7 ,
-              backgroundColor: Colors.indigo.shade600 ,
-              decoration: TextDecoration.lineThrough ,
-              fontStyle: FontStyle.italic ,
-
+          child: RichText(
+            text: TextSpan(
+              text: "Don't have an account? ",
+              style: TextStyle(
+                color: Colors.blue.shade900,
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: "Sign up",
+                  style: TextStyle(
+                    color: Colors.orange.shade100,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      print("click");
+                    },
+                ),
+              ],
             ),
-
-          )
-
-        )
-
+          ),
         ),
-
+      ),
     );
   }
 }
