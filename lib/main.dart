@@ -4,6 +4,7 @@ main(){
   runApp(Yoser());
 }
 class Yoser extends StatelessWidget{
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +18,21 @@ class Yoser extends StatelessWidget{
             fontWeight: FontWeight.bold
           ) ,
         ),
-          backgroundColor:Colors.red.shade800 ,
+          backgroundColor:Colors.white,
+        ),
+        body: Column(
+          children: [
+            Text("reslut $counter",
+              style: TextStyle(
+                fontSize: 22,
+              ),
+            ) ,
+            ElevatedButton(onPressed: (){
+              counter++;
+              print("counter = $counter");
+            },
+                child: Text("task1"))
+          ],
         ),
       ),
     );
