@@ -1,44 +1,25 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(PopupMenuItem(child: AppBar()));
+main(){
+  runApp(Yoser());
 }
-class Yoser extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    return Zaina();
-  }
-}
-class Zaina extends State<Yoser>{
-  List <String> color =["red" , "pink" ,"green", "balck" ,"white"];
-  String? Selectonitem = "pink";
+class Yoser extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Welcom Back"),
+          title: Text("YOSR IS COMING!" ,
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.blue.shade200,
+            fontWeight: FontWeight.bold
+          ) ,
         ),
-        body: Column(
-          children: [
-
-            DropdownButton(items: color.map((item){
-              return DropdownMenuItem(child: Text(item),
-                value: item,);
-            }).toList(),
-                onChanged: (nValue){
-                  Selectonitem= nValue;
-
-                })
-          ],
-
+          backgroundColor:Colors.red.shade800 ,
         ),
       ),
-
-
     );
-
   }
-
 }
