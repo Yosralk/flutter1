@@ -1,42 +1,44 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-
-void main() {
-  runApp(MyRichTextApp());
+void main(){
+  runApp(PopupMenuItem(child: AppBar()));
 }
-
-class MyRichTextApp extends StatelessWidget {
+class Yoser extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return Zaina();
+  }
+}
+class Zaina extends State<Yoser>{
+  List <String> color =["red" , "pink" ,"green", "balck" ,"white"];
+  String? Selectonitem = "pink";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Rich Text Widget"),
+          title: Text("Welcom Back"),
         ),
-        body: Center(
-          child: RichText(
-            text: TextSpan(
-              text: "Don't have an account? ",
-              style: TextStyle(
-                color: Colors.blue.shade900,
-              ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: "Sign up",
-                  style: TextStyle(
-                    color: Colors.orange.shade100,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      print("click");
-                    },
-                ),
-              ],
-            ),
-          ),
+        body: Column(
+          children: [
+
+            DropdownButton(items: color.map((item){
+              return DropdownMenuItem(child: Text(item),
+                value: item,);
+            }).toList(),
+                onChanged: (nValue){
+                  Selectonitem= nValue;
+
+                })
+          ],
+
         ),
       ),
+
+
     );
+
   }
+
 }
