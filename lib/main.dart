@@ -1,40 +1,32 @@
 import 'package:flutter/material.dart';
-
 main(){
-  runApp(Yoser());
+  runApp(TextWidget());
 }
-class Yoser extends StatelessWidget{
-  int counter = 0;
+class TextWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("YOSR IS COMING!" ,
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.blue.shade200,
-            fontWeight: FontWeight.bold
-          ) ,
-        ),
-          backgroundColor:Colors.white,
-        ),
-        body: Column(
-          children: [
-            Text("reslut $counter",
+          backgroundColor: Colors.green.shade600,
+          title: Text("TextWidget",
               style: TextStyle(
-                fontSize: 22,
-              ),
-            ) ,
-            ElevatedButton(onPressed: (){
-              counter++;
-              print("counter = $counter");
-            },
-                child: Text("task1"))
-          ],
-        ),
+              fontSize: 50,
+                color: Colors.white,
+          ),
+            
+          ),
       ),
+        body: Center(
+          child: RichText(text: TextSpan(
+            text: "hello" ,
+            style: TextStyle(
+              color: Colors.pink.shade300,
+            )
+          )
+          ),
+        ),
+    ),
     );
   }
 }
