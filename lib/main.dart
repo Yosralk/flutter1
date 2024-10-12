@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-void main(){
+main(){
   runApp(Yoser());
 }
 class Yoser extends StatefulWidget {
@@ -13,56 +12,27 @@ class Yoser extends StatefulWidget {
 class _YoserState extends State<Yoser> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("view1"),
-          backgroundColor: Colors.purpleAccent,
+    return Scaffold(
+      backgroundColor: Color(0x4287f5),
+      appBar: AppBar(title: Text("Home page",
+        style: TextStyle(fontWeight: FontWeight.w200,
+          color: Colors.grey,
+          fontSize: 90,
         ),
-      body:ListView(
-        children: [
-          ListTile(
-            title: Text("book"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book2"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book3"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book4"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book5"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book6"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book7"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book8"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book9"),
-            leading: Icon(Icons.directions_walk),
-          ),
-          ListTile(
-            title: Text("book10"),
-            leading: Icon(Icons.directions_walk),
-          ),
-        ],
-      )
+
+      ),
+        backgroundColor: Color(0x428df5),
+      ),
+      body: Container(
+        color: Color(0x4263f5),
+        margin: EdgeInsets.symmetric(horizontal: 345),
+        height: 987,
+        width: 567,
+        decoration: BoxDecoration(
+          color: Color(0x4287f5),
+          border: Border(bottom: BorderSide(color: Colors.white12,width: 123,style: BorderStyle.solid))
+            
+        ),
       ),
     );
   }
