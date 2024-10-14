@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
-main(){
+import'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main(){
   runApp(Yoser());
 }
 class Yoser extends StatefulWidget {
@@ -12,26 +14,44 @@ class Yoser extends StatefulWidget {
 class _YoserState extends State<Yoser> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0x4287f5),
-      appBar: AppBar(title: Text("Home page",
-        style: TextStyle(fontWeight: FontWeight.w200,
-          color: Colors.grey,
-          fontSize: 90,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Gmail",
+            style: TextStyle(
+              fontSize: 78,
+              backgroundColor: Colors.green.shade700,
+            ),
+          ),
         ),
-
-      ),
-        backgroundColor: Color(0x428df5),
-      ),
-      body: Container(
-        color: Color(0x4263f5),
-        margin: EdgeInsets.symmetric(horizontal: 345),
-        height: 987,
-        width: 567,
-        decoration: BoxDecoration(
-          color: Color(0x4287f5),
-          border: Border(bottom: BorderSide(color: Colors.white12,width: 123,style: BorderStyle.solid))
-            
+        body: Column(
+          children: [
+            TextField(
+              obscureText: true,
+              inputFormatters: [
+              ],
+              keyboardType: TextInputType.numberWithOptions(),
+              decoration:InputDecoration(
+                icon: Icon(Icons.star_half_rounded , color: Colors.deepOrangeAccent,),
+                prefixIcon: Icon(Icons.car_crash_rounded),
+                suffixIcon: Icon(Icons.wallet),
+                prefixText: "Hello",
+                suffixText: "@gmail.come",
+                hintText: "Ex:gmail.come",
+                helperMaxLines: 4,
+                errorText: "Error",
+                label: Text("username"),
+                helperText: "Help",
+                counterText: "1-45",
+                floatingLabelBehavior: FloatingLabelBehavior.auto,
+                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Colors.purple,
+                focusedBorder: OutlineInputBorder(),
+                focusColor: Colors.yellow,
+              ) ,
+            )
+          ],
         ),
       ),
     );
