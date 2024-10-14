@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,6 +15,15 @@ class Yoser extends StatefulWidget {
 }
 
 class _YoserState extends State<Yoser> {
+  String? inputuser;
+  TextEditingController controller= TextEditingController(text: inputuser)
+  @override
+  super.@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    TextEditingController(text:inputuser );
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,31 +38,24 @@ class _YoserState extends State<Yoser> {
         ),
         body: Column(
           children: [
+            SizedBox(height: 87,),
             TextField(
-              obscureText: true,
-              inputFormatters: [
-              ],
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration:InputDecoration(
-                icon: Icon(Icons.star_half_rounded , color: Colors.deepOrangeAccent,),
-                prefixIcon: Icon(Icons.car_crash_rounded),
-                suffixIcon: Icon(Icons.wallet),
-                prefixText: "Hello",
-                suffixText: "@gmail.come",
-                hintText: "Ex:gmail.come",
-                helperMaxLines: 4,
-                errorText: "Error",
-                label: Text("username"),
-                helperText: "Help",
-                counterText: "1-45",
-                floatingLabelBehavior: FloatingLabelBehavior.auto,
-                border: OutlineInputBorder(),
-                filled: true,
-                fillColor: Colors.purple,
-                focusedBorder: OutlineInputBorder(),
-                focusColor: Colors.yellow,
-              ) ,
+              keyboardType: TextInputType.text,
+              onChanged: (v){
+                setState(() {
+                  inputuser=v;
+                });
+              },
+            ),
+            Text(inputuser!),
+            SizedBox(height: 90,),
+            Checkbox(value: isCanvasKit, onChanged: (v){
+              setState(() {
+                isCanvasKit=v!;
+              });
+            }
             )
+
           ],
         ),
       ),
