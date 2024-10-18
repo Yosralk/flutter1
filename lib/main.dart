@@ -1,64 +1,22 @@
-import 'dart:async';
+import 'package:flutter/material.dart';
+import'Form.dart';
+import'login.dart';
 
-import 'package:flutter/foundation.dart';
-import'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-void main(){
-  runApp(Yoser());
+main(){
+  runApp(FormClass());
 }
-class Yoser extends StatefulWidget {
-  const Yoser({super.key});
+class FormClass extends StatefulWidget {
+  const FormClass({super.key});
 
   @override
-  State<Yoser> createState() => _YoserState();
+  State<FormClass> createState() => _FormClassState();
 }
 
-class _YoserState extends State<Yoser> {
-  String? inputuser;
-  TextEditingController controller= TextEditingController(text: inputuser)
-  @override
-  super.@override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    TextEditingController(text:inputuser );
-  }
+class _FormClassState extends State<FormClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Gmail",
-            style: TextStyle(
-              fontSize: 78,
-              backgroundColor: Colors.green.shade700,
-            ),
-          ),
-        ),
-        body: Column(
-          children: [
-            SizedBox(height: 87,),
-            TextField(
-              keyboardType: TextInputType.text,
-              onChanged: (v){
-                setState(() {
-                  inputuser=v;
-                });
-              },
-            ),
-            Text(inputuser!),
-            SizedBox(height: 90,),
-            Checkbox(value: isCanvasKit, onChanged: (v){
-              setState(() {
-                isCanvasKit=v!;
-              });
-            }
-            )
-
-          ],
-        ),
-      ),
+      home: FormClass(),
     );
   }
 }
