@@ -1,63 +1,78 @@
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class Login2 extends StatefulWidget {
+  const Login2({super.key});
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<Login2> createState() => _Login2State();
 }
 
-class _LoginFormState extends State<LoginForm> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LoginScreen(),
-    );
-  }
-}
-class LoginScreen extends StatelessWidget{
+class _Login2State extends State<Login2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login page",
+        title: Text(
+          "Hello Sign in!",
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 49,
-            fontWeight: FontWeight.w100,
+            fontSize: 30,
+            color: Color(0xCD801E1E),
           ),
         ),
-        centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color(0xCD801E35),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-            padding:const EdgeInsets.all(20),
-          child: Form(
-              child: Column(
-                children: [
-                  SizedBox(height: 30,),
-                  Image.network("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fprofile-image&psig=AOvVaw2YIUAU0imcHvXw8Lybs5b4&ust=1729364535469000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDnvojPmIkDFQAAAAAdAAAAABAE",
-                  width: 100,),
-                  SizedBox(
-                    height: 20,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Form(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 30),
+                TextFormField(
+                  decoration: decorationLogin(
+                      "Gmail",
+                      "joydeo@gmail.com",
+                      Icons.check
                   ),
-                  TextFormField(
-                    decoration: decoration("username","username or email"),
+                ),
+                SizedBox(height: 20),
+                TextFormField(
+                  decoration: decorationLogin(
+                      "Password",
+                      "*****",
+                      Icons.visibility_off_outlined
                   ),
-                  SizedBox(height: 30,),
-                  TextFormField(
-                    decoration: Decoration("password", "enter your password"),
+                  obscureText: true,
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text("SIGN IN"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xCD801E3C),
                   ),
-                  SizedBox(height: 20,),
-                  TextFormField(
-                    decoration: Decoration("password" , "enter password again"),
-                  )
-                ],
-              )
+                ),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+InputDecoration decorationLogin(String lbl, String hint, IconData icon) {
+  return InputDecoration(
+    labelText: lbl,
+    hintText: hint,
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Color(0xCD801E47),
+        width: 3,
       ),
     ),
-  }
+    filled: true,
+    suffixIcon: Icon(icon),
+  );
 }

@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import'Form.dart';
-import'login.dart';
+import 'package:flutter1/login.dart';
 
 main(){
-  runApp(FormClass());
+  runApp(TestClass());
 }
-class FormClass extends StatefulWidget {
-  const FormClass({super.key});
+class TestClass extends StatefulWidget {
+  const TestClass({super.key});
 
   @override
-  State<FormClass> createState() => _FormClassState();
+  State<TestClass> createState() => _TestClassState();
 }
 
-class _FormClassState extends State<FormClass> {
+class _TestClassState extends State<TestClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FormClass(),
+      home: Login2(
+
+      )
     );
   }
 }
