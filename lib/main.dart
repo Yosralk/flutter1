@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1/login.dart';
+import 'package:flutter1/Screen2.dart';
 
-main(){
-  runApp(TestClass());
-}
-class TestClass extends StatefulWidget {
-  const TestClass({super.key});
-
-  @override
-  State<TestClass> createState() => _TestClassState();
+void main() {
+  runApp(Screen1());
 }
 
-class _TestClassState extends State<TestClass> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Login2(
+class Screen1 extends StatefulWidget {
+  const Screen1({super.key});
 
-      )
-    );
+  @override
+  State<Screen1> createState() => _Screen1State();
+}
+
+class _Screen1State extends State<Screen1> {
+  @override
+  Widget build(BuildContextcontext) {
+  return MaterialApp(
+  debugShowCheckedModeBanner: false,
+  home: Screen1(),
+  routes: {
+  '/screen2':(context) => Screen2(),
+  },
+  );
   }
 }
