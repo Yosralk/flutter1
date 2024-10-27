@@ -30,7 +30,7 @@ class Screen1 extends StatelessWidget {
                   SizedBox(height: 20),
                   //Image.network(
                   //  "https://png.pngtree.com/png-clipart/20191101/ourlarge/pngtree-orange-yellow-welcome-font-gradient-wordart.jpg",
-                 // ),
+                  // ),
                   TextFormField(
                     decoration: decorationclass("username", "Email", Icons.person),
                     validator: (username) {
@@ -83,10 +83,6 @@ class Screen1 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        icon: Image.network("https://imageurl.com/google_icon.png"),
-                        onPressed: () {},
-                      ),
                       IconButton(
                         icon: Image.network("https://imageurl.com/facebook_icon.png"),
                         onPressed: () {},
