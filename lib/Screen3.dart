@@ -37,8 +37,6 @@ class Screen3 extends StatelessWidget {
           SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
-              // Handle login logic here (e.g., authenticate user)
-              // After successful login, navigate to the welcome screen
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Screen1()),
@@ -49,7 +47,6 @@ class Screen3 extends StatelessWidget {
           SizedBox(height: 20),
           TextButton(
             onPressed: () {
-              // Navigate to the sign-up screen
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Screen1()),
