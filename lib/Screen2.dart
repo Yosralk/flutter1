@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Screen1.dart';
 import 'Screen3.dart';
 
 class Screen2 extends StatefulWidget {
@@ -10,6 +11,7 @@ class Screen2 extends StatefulWidget {
 
 class _Screen2State extends State<Screen2> {
   bool isTermsAccepted = false;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +30,45 @@ class _Screen2State extends State<Screen2> {
       body: Padding(
         padding: const EdgeInsets.all(11),
         child: Form(
+          key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 30),
               TextFormField(
                 decoration: decorationclass("Username", "yoser", Icons.person),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a username';
+                  }
+                  return null;
+                },
               ),
               SizedBox(height: 20),
               TextFormField(
                 decoration: decorationclass("Email", "Jody2@gmail.com", Icons.email),
                 keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter an email';
+                  } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    return 'Please enter a valid email';
+                  }
+                  return null;
+                },
               ),
               SizedBox(height: 30),
               TextFormField(
                 decoration: decorationclass("Password", "*****", Icons.visibility_off_outlined),
                 obscureText: true,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a password';
+                  } else if (value.length < 6) {
+                    return 'Password must be at least 6 characters';
+                  }
+                  return null;
+                },
               ),
               SizedBox(height: 20),
               Row(
@@ -67,15 +92,13 @@ class _Screen2State extends State<Screen2> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  if (isTermsAccepted) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Screen3()),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Please accept the terms to sign up")),
-                    );
+                  if (_formKey.currentState!.validate()) {
+                    if (isTermsAccepted) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Screen3()),
+                      );
+                    }
                   }
                 },
                 style: ElevatedButton.styleFrom(
@@ -98,27 +121,6 @@ class _Screen2State extends State<Screen2> {
           ),
         ),
       ),
-    );
-  }
-
-  InputDecoration decorationclass(String lbl, String hint, IconData icon) {
-    return InputDecoration(
-      labelText: lbl,
-      hintText: hint,
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Colors.orange.shade900,
-          width: 2,
-        ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Colors.orange,
-          width: 2,
-        ),
-      ),
-      filled: true,
-      suffixIcon: Icon(icon, color: Colors.orange),
     );
   }
 }
