@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'Function.dart';
 import 'Screen2.dart';
+
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
@@ -29,7 +31,7 @@ class Screen1 extends StatelessWidget {
                 children: [
                   SizedBox(height: 20),
                   Image.network(
-                    "https://png.pngtree.com/png-clipart/20191101/ourlarge/pngtree-orange-yellow-welcome-font-gradient-wordart.jpg",
+                    "https://ouch-cdn2.icons8.com/ZerfIA6CiU26D_2pgIAWWJfGfgHKoF_X_RawL6LMibQ/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNjIw/LzdlNmIzMjVjLWVi/MWYtNDBhNC1iZTkx/LTBlNTU3OWJjNDIx/ZC5zdmc.png",
                     height: 100,
                   ),
                   SizedBox(height: 30),
@@ -81,19 +83,19 @@ class Screen1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        icon: Image.network("https://imageurl.com/google_icon.png"),
+                        icon: Icon(Icons.facebook_outlined),
                         onPressed: () {
                           // Handle Google login
                         },
                       ),
                       IconButton(
-                        icon: Image.network("https://ci3.googleusercontent.com/meips/ADKq_Na3BKP36iGgcq_DRwpf_hh5iMEy_Ys0uUslpsycpkvd_gPai9l0hFAD2XKJE4MJynkU6Wy3JuzJxnnqXV1TFICjypiHpSBCrKET7YboHsjORw-hnzoiHQJOjKPS31nS5Ofg7UdPwIgPhHK4qRtGrZAq5PHepxqFl4Pf2R79XLn11sntaz5q08M=s0-d-e1-ft#https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1200px-2021_Facebook_icon.svg.png"), // Replace with actual Facebook icon URL
+                        icon: Icon(Icons.telegram),
                         onPressed: () {
                           // Handle Facebook login
                         },
                       ),
                       IconButton(
-                        icon: Image.network("https://imageurl.com/twitter_icon.png"),
+                        icon: Icon(Icons.snapchat),
                         onPressed: () {
                         },
                       ),
@@ -118,24 +120,3 @@ class Screen1 extends StatelessWidget {
     );
   }
 
-  InputDecoration decorationclass(String label, String hint, IconData icon) {
-    return InputDecoration(
-      labelText: label,
-      hintText: hint,
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Colors.orange.shade900,
-          width: 2,
-        ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Colors.orange.shade700,
-          width: 2,
-        ),
-      ),
-      filled: true,
-      suffixIcon: Icon(icon),
-    );
-  }
-}

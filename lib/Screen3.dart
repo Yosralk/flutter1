@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Screen1.dart';
 import 'Screen2.dart';
+import 'Function.dart';
 
 class Screen3 extends StatelessWidget {
   const Screen3({super.key});
@@ -81,23 +82,3 @@ class Screen3 extends StatelessWidget {
   }
 }
 
-InputDecoration decorationclass(String lbl, String hint, IconData icon) {
-  return InputDecoration(
-    labelText: lbl,
-    hintText: hint,
-    enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: Colors.orange.shade900,
-        width: 2,
-      ),
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(
-        color: Colors.orange,
-        width: 2,
-      ),
-    ),
-    filled: true,
-    suffixIcon: Icon(icon, color: Colors.orange),
-  );
-}
