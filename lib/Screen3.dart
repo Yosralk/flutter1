@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screen1.dart';
+import 'Welcom.dart';
 import 'Screen2.dart';
 import 'Function.dart';
 
@@ -55,7 +55,7 @@ class Screen3 extends StatelessWidget {
                   if (_formKey.currentState!.validate()) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Screen1()),
+                      MaterialPageRoute(builder: (context) => Welcom()),
                     );
                   }
                 },
@@ -66,7 +66,7 @@ class Screen3 extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Screen1()),
+                    MaterialPageRoute(builder: (context) => Welcom()),
                   );
                 },
                 child: Text(

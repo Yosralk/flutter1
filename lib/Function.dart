@@ -21,4 +21,4 @@ InputDecoration decorationclass(String label, String hint, IconData icon) {
     suffixIcon: Icon(icon),
   );
 }
-}
+

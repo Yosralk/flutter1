@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter1/Screen2.dart';
 import 'package:flutter1/Screen3.dart';
-import 'Screen1.dart';
+import 'Welcom.dart';
+import 'Function.dart';
 
 void main() {
   runApp(MyyApp());
@@ -19,7 +20,7 @@ class _MyyAppState extends State<MyyApp> {
   Widget build(BuildContextcontext) {
   return MaterialApp(
   debugShowCheckedModeBanner: false,
-  home: Screen1(),
+  home: Welcom(),
   routes: {
   '/screen2':(context) => Screen2(),
     '/Screen3':(context)=>Screen3(),

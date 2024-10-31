@@ -1,10 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'Function.dart';
 import 'Screen2.dart';
 
 
-class Screen1 extends StatelessWidget {
-  const Screen1({super.key});
+
+class Welcom extends StatelessWidget {
+  const Welcom({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Screen1 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            "LOGIN",
+            "Welcom",
             style: TextStyle(
               fontSize: 20,
               color: Color(0xCDf59842),
@@ -119,4 +121,13 @@ class Screen1 extends StatelessWidget {
       ),
     );
   }
+  InputDecoration decorationclass(String label, String hint, IconData icon) {
+    return InputDecoration(
+      labelText: label,
+      hintText: hint,
+      prefixIcon: Icon(icon),
+      border: OutlineInputBorder(),
+    );
+  }
+
 
