@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1/Screen2.dart';
-import 'package:flutter1/Screen3.dart';
+import 'package:flutter1/Function.dart';
 import 'Welcom.dart';
-import 'Function.dart';
+import 'package:flutter1/screen2.dart';
+import 'package:flutter1/screen3.dart';
+import 'ProductScreen.dart';
+import 'package:flutter1/boutique.dart';
 
 void main() {
-  runApp(MyyApp());
+  runApp(MyApp());
 }
 
-class MyyApp extends StatefulWidget {
-  const MyyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  State<MyyApp> createState() => _MyyAppState();
-}
-
-class _MyyAppState extends State<MyyApp> {
-  @override
-  Widget build(BuildContextcontext) {
-  return MaterialApp(
-  debugShowCheckedModeBanner: false,
-  home: Welcom(),
-  routes: {
-  '/screen2':(context) => Screen2(),
-    '/Screen3':(context)=>Screen3(),
-  },
-
-  );
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Welcom(),
+      routes: {
+        '/screen2': (context) => Screen2(),
+        '/screen3': (context) => Screen3(),
+        '/products': (context) => ProductScreen(),
+        '/boutique': (context) => Boutique(),
+      },
+    );
   }
 }

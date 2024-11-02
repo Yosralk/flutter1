@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Welcom.dart';
-import 'Screen2.dart';
 import 'Function.dart';
+import 'Welcom.dart';
 
 class Screen3 extends StatelessWidget {
   const Screen3({super.key});
@@ -30,7 +29,7 @@ class Screen3 extends StatelessWidget {
             children: [
               SizedBox(height: 30),
               TextFormField(
-                decoration: decorationclass("Username", "yoser", Icons.person),
+                decoration: decorationclass("Username", "Enter your username", Icons.person),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a username';
@@ -40,7 +39,7 @@ class Screen3 extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextFormField(
-                decoration: decorationclass("Password", "*****", Icons.visibility_off_outlined),
+                decoration: decorationclass("Password", "Enter your password", Icons.visibility_off_outlined),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -53,10 +52,7 @@ class Screen3 extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Welcom()),
-                    );
+                    Navigator.pushNamed(context, '/welcom');
                   }
                 },
                 child: Text('Login'),
@@ -64,10 +60,7 @@ class Screen3 extends StatelessWidget {
               SizedBox(height: 20),
               TextButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Welcom()),
-                  );
+                  Navigator.pushNamed(context, '/welcom');
                 },
                 child: Text(
                   "Don't have an account? Sign Up",
@@ -81,4 +74,3 @@ class Screen3 extends StatelessWidget {
     );
   }
 }
-
