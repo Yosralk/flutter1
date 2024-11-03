@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'Screen5.dart';
 
-class ProductScreen extends StatelessWidget {
+class Screen4 extends StatelessWidget {
   final List<Product> products = [
-    Product('T-Shirt', 20,"https://i.pinimg.com/originals/05/58/51/055851c8bf4d541e60509b950616f903.png"),
-    Product('Jeans', 40,"https://w7.pngwing.com/pngs/717/670/png-transparent-jeans-waist-denim-leggings-clothing-jeans-blue-girl-abdomen.png"),
-    Product('Jacket', 60,"https://w7.pngwing.com/pngs/154/132/png-transparent-women-s-brown-double-breasted-coat-coat-jacket-canada-goose-parka-ugg-women-s-coats-zipper-holidays-women-accessories-thumbnail.png"),
+    Product('T-Shirt', 20, "https://i.pinimg.com/originals/05/58/51/055851c8bf4d541e60509b950616f903.png"),
+    Product('Jeans', 40, "https://w7.pngwing.com/pngs/717/670/png-transparent-jeans-waist-denim-leggings-clothing-jeans-blue-girl-abdomen.png"),
+    Product('Jacket', 60, "https://w7.pngwing.com/pngs/154/132/png-transparent-women-s-brown-double-breasted-coat-coat-jacket-canada-goose-parka-ugg-women-s-coats-zipper-holidays-women-accessories-thumbnail.png"),
     Product('Shoes', 50, "https://w7.pngwing.com/pngs/13/200/png-transparent-high-heeled-shoe-female-shoe-shoe-ballet-flat-stock-photography-thumbnail.png"),
   ];
 
@@ -13,7 +14,7 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Products'),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xCDa83232),
         centerTitle: true,
       ),
       body: GridView.builder(
@@ -64,7 +65,7 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(product.name),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.brown,
         centerTitle: true,
       ),
       body: Center(
@@ -80,7 +81,7 @@ class ProductDetailsScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text(
               '\$${product.price}',
-              style: TextStyle(fontSize: 20, color: Colors.deepOrange),
+              style: TextStyle(fontSize: 20, color: Colors.grey),
             ),
           ],
         ),

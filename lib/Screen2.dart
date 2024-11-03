@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter1/screen3.dart';
 import 'Function.dart';
 import 'Screen3.dart';
-import 'Welcom.dart';
-
-
 
 class Screen2 extends StatefulWidget {
   const Screen2({super.key});
@@ -24,7 +22,7 @@ class _Screen2State extends State<Screen2> {
           "SIGN UP",
           style: TextStyle(
             fontSize: 30,
-            color: Colors.deepOrange,
+            color: Color(0xCD7f32a8),
           ),
         ),
         backgroundColor: Colors.white,
@@ -99,13 +97,13 @@ class _Screen2State extends State<Screen2> {
                     if (isTermsAccepted) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Screen3()),
+                        MaterialPageRoute(builder: (context) => Screen2()),
                       );
                     }
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Color(0xCDa83246),
                   padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 ),
                 child: Text("Sign Up"),
@@ -113,11 +111,11 @@ class _Screen2State extends State<Screen2> {
               SizedBox(height: 20),
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/screen3');
                 },
                 child: Text(
                   "Already have an account? Login",
-                  style: TextStyle(color: Colors.deepOrange),
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
             ],

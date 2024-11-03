@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'Function.dart';
 import 'Screen2.dart';
 
-class Welcom extends StatelessWidget {
-  const Welcom({super.key});
+class Welcome extends StatelessWidget {
+  const Welcome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class Welcom extends StatelessWidget {
           "Welcome",
           style: TextStyle(
             fontSize: 20,
-            color: Color(0xCDf59842),
+            color: Color(0xCDa8325e),
             fontWeight: FontWeight.w200,
           ),
         ),
@@ -69,7 +69,7 @@ class Welcom extends StatelessWidget {
                     Navigator.pushNamed(context, '/screen2');
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xCDf59842),
+                    backgroundColor: Color(0xCDa83273),
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   ),
                   child: Text('Login'),

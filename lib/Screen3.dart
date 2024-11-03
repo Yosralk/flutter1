@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'Function.dart';
-import 'Welcom.dart';
 
 class Screen3 extends StatelessWidget {
-  const Screen3({super.key});
+  final _formKey = GlobalKey<FormState>();
+
+  Screen3({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "LOGIN",
+          "Login",
           style: TextStyle(
             fontSize: 20,
-            color: Colors.deepOrange,
+            color: Colors.pinkAccent.shade100,
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -39,7 +39,7 @@ class Screen3 extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextFormField(
-                decoration: decorationclass("Password", "Enter your password", Icons.visibility_off_outlined),
+                decoration: decorationclass("Password", "Enter your password", Icons.lock),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -52,19 +52,23 @@ class Screen3 extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    Navigator.pushNamed(context, '/welcom');
+                    Navigator.pushNamed(context, '/welcome');
                   }
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pink,
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                ),
                 child: Text('Login'),
               ),
               SizedBox(height: 20),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/welcom');
+                  Navigator.pushNamed(context, '/screen2');
                 },
                 child: Text(
                   "Don't have an account? Sign Up",
-                  style: TextStyle(color: Colors.deepOrange),
+                  style: TextStyle(color: Colors.grey),
                 ),
               ),
             ],

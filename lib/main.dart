@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1/Function.dart';
+import 'Function.dart';
 import 'Welcom.dart';
-import 'package:flutter1/screen2.dart';
-import 'package:flutter1/screen3.dart';
-import 'ProductScreen.dart';
-import 'package:flutter1/boutique.dart';
+import 'Screen2.dart';
+import 'Screen3.dart';
+import 'Screen4.dart';
+import 'Screen5.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Welcom(),
+      home: Welcome(),
       routes: {
         '/screen2': (context) => Screen2(),
         '/screen3': (context) => Screen3(),
-        '/products': (context) => ProductScreen(),
-        '/boutique': (context) => Boutique(),
+        '/products': (context) => Screen4(),
+        '/boutique': (context) => Screen5(),
       },
     );
   }
