@@ -1,125 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:flutter1/screen3.dart';
+import 'Welcom.dart';
 import 'Function.dart';
 import 'Screen3.dart';
 
-class Screen2 extends StatefulWidget {
-  const Screen2({super.key});
-
-  @override
-  _Screen2State createState() => _Screen2State();
-}
-
-class _Screen2State extends State<Screen2> {
-  bool isTermsAccepted = false;
-  final _formKey = GlobalKey<FormState>();
-
+class Screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "SIGN UP",
-          style: TextStyle(
-            fontSize: 30,
-            color: Color(0xCD7f32a8),
-          ),
-        ),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-      ),
+      backgroundColor: Color(0xCDeb348c),
       body: Padding(
-        padding: const EdgeInsets.all(11),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 30),
-              TextFormField(
-                decoration: decorationclass("Username", "yoser", Icons.person),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a username';
-                  }
-                  return null;
-                },
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+              "https://image.similarpng.com/thumbnail/2021/09/Fashion-elegant-woman-silhouette-logo-template-on-transparent-background-PNG.png",
+              height: 200,
+            ),
+            SizedBox(height: 24),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Email',
+                border: OutlineInputBorder(),
               ),
-              SizedBox(height: 20),
-              TextFormField(
-                decoration: decorationclass("Email", "Jody2@gmail.com", Icons.email),
-                keyboardType: TextInputType.emailAddress,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter an email';
-                  } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                    return 'Please enter a valid email';
-                  }
-                  return null;
-                },
+            ),
+            SizedBox(height: 12),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Password',
+                border: OutlineInputBorder(),
               ),
-              SizedBox(height: 30),
-              TextFormField(
-                decoration: decorationclass("Password", "*****", Icons.visibility_off_outlined),
-                obscureText: true,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a password';
-                  } else if (value.length < 6) {
-                    return 'Password must be at least 6 characters';
-                  }
-                  return null;
-                },
+              obscureText: true,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {},
+                child: Text('Forgot Password?'),
               ),
-              SizedBox(height: 20),
-              Row(
-                children: [
-                  Checkbox(
-                    value: isTermsAccepted,
-                    onChanged: (value) {
-                      setState(() {
-                        isTermsAccepted = value!;
-                      });
-                    },
-                  ),
-                  Expanded(
-                    child: Text(
-                      "I accept the Privacy Policy and Terms",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                  ),
-                ],
+            ),
+            SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('LOGIN'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 48),
+                backgroundColor:Color(0xCDeb3480),
               ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    if (isTermsAccepted) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Screen2()),
-                      );
-                    }
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xCDa83246),
-                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-                ),
-                child: Text("Sign Up"),
-              ),
-              SizedBox(height: 20),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/screen3');
-                },
-                child: Text(
-                  "Already have an account? Login",
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(height: 12),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/Screen3');
+              },
+              child: Text("Don't have an account? Sign Up"),
+            ),
+          ],
         ),
       ),
     );

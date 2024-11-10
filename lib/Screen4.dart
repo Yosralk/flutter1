@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'Function.dart';
+import 'Screen2.dart';
+import 'Screen3.dart';
 import 'Screen5.dart';
 
 class Screen4 extends StatelessWidget {

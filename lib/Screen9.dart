@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'Welcom.dart';
+import 'Function.dart';
+import 'Screen2.dart';
+import 'Screen3.dart';
+import 'Screen4.dart';
+import 'Screen5.dart';
+import 'Screen6.dart';
+import 'Screen7.dart';
+import 'Screen8.dart';
 
 class Screen9 extends StatelessWidget {
   @override
